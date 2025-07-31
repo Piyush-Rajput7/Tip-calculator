@@ -19,7 +19,7 @@
 }
 
 html {
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 62.5%;
 }
 
 body {
@@ -30,7 +30,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem;
+  justify-content: flex-start;
+  padding-top: 6rem;
+  padding-inline: 2rem;
 }
 
 .heading {
@@ -46,18 +48,19 @@ body {
   border-radius: 1.5rem;
   padding: 3rem;
   width: 100%;
-  max-width: 57rem;
+  max-width: 92rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.05);
 }
 
 .input-panel label {
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
   display: block;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+  color: var(--dark-grayish-cyan);
 }
 
 .input-field {
@@ -130,7 +133,7 @@ body {
   background-color: var(--very-dark-cyan);
   color: var(--white);
   border-radius: 1.5rem;
-  padding: 3rem;
+  padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
@@ -153,7 +156,7 @@ body {
 }
 
 .amount {
-  font-size: 3rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: var(--strong-cyan);
 }
@@ -184,13 +187,13 @@ body {
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
-    align-items: flex-start;
+    justify-content: space-between;
     gap: 4rem;
   }
 
   .input-panel {
     flex: 1;
-    padding-right: 1rem;
+    padding-right: 2rem;
   }
 
   .calculation-result {
@@ -199,6 +202,5 @@ body {
     justify-content: space-between;
   }
 }
-
 
 
