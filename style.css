@@ -1,7 +1,3 @@
-
-
-
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
 :root {
@@ -12,12 +8,18 @@
   --light-grayish-cyan: hsl(185, 41%, 84%);
   --very-light-grayish-cyan: hsl(189, 41%, 97%);
   --white: hsl(0, 0%, 100%);
+  --radius: 0.5rem;
+  --transition: 0.3s ease;
 }
 
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
@@ -33,10 +35,10 @@ body {
 
 .heading {
   letter-spacing: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--very-dark-cyan);
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .container {
@@ -44,38 +46,40 @@ body {
   border-radius: 1.5rem;
   padding: 3rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 57rem;
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.05);
 }
 
 .input-panel label {
   font-weight: 700;
   margin-bottom: 0.5rem;
   display: block;
+  font-size: 1.4rem;
 }
 
 .input-field {
   position: relative;
   background-color: var(--very-light-grayish-cyan);
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
 }
 
 .input-field img {
-  width: 12px;
-  margin-right: 0.5rem;
+  width: 1.2rem;
+  margin-right: 1rem;
 }
 
 .input-field input {
   border: none;
   background: none;
   width: 100%;
-  font-size: 1.25rem;
+  font-size: 2rem;
   color: var(--very-dark-cyan);
   text-align: right;
   font-weight: 700;
@@ -86,20 +90,20 @@ body {
 .btn-panel {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-bottom: 1.2rem;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .percentage-btn {
   background-color: var(--very-dark-cyan);
   color: var(--white);
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
-  padding: 0.5rem 0;
+  padding: 1rem 0;
   border: none;
-  border-radius: 0.3rem;
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .percentage-btn:hover,
@@ -109,25 +113,28 @@ body {
 }
 
 .custom-tip {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  padding: 0.5rem;
+  padding: 1rem;
   width: 100%;
   text-align: right;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   background-color: var(--very-light-grayish-cyan);
   color: var(--very-dark-cyan);
+  font-family: inherit;
+  outline: none;
 }
 
 .calculation-result {
   background-color: var(--very-dark-cyan);
   color: var(--white);
-  border-radius: 1rem;
-  padding: 2rem;
+  border-radius: 1.5rem;
+  padding: 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
+  justify-content: space-between;
 }
 
 .result {
@@ -137,37 +144,61 @@ body {
 }
 
 .label h2 {
-  font-size: 1rem;
+  font-size: 1.4rem;
 }
 
 .label p {
-  font-size: 0.75rem;
+  font-size: 1.2rem;
   color: var(--grayish-cyan);
 }
 
 .amount {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--strong-cyan);
 }
 
 .reset-btn {
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--strong-cyan);
   border: none;
-  border-radius: 0.5rem;
+  border-radius: var(--radius);
   color: var(--very-dark-cyan);
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .reset-btn:hover {
   background-color: hsl(172, 67%, 55%);
 }
 
+.reset-btn:disabled {
+  background-color: var(--strong-cyan);
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem;
+  }
+
+  .input-panel {
+    flex: 1;
+    padding-right: 1rem;
+  }
+
+  .calculation-result {
+    flex: 1;
+    height: 100%;
+    justify-content: space-between;
+  }
+}
 
 
 
