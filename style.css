@@ -30,9 +30,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding-top: 6rem;
-  padding-inline: 2rem;
+  /* --- FIX 1: Changed to center the content vertically --- */
+  justify-content: center; 
+  padding: 2rem; /* Use padding instead of margin/padding-top for better centering */
 }
 
 .heading {
@@ -40,7 +40,8 @@ body {
   font-size: 2rem;
   color: var(--very-dark-cyan);
   text-align: center;
-  margin-bottom: 3rem;
+  /* --- FIX: Added more space between heading and container --- */
+  margin-bottom: 6rem; 
 }
 
 .container {
@@ -48,18 +49,19 @@ body {
   border-radius: 1.5rem;
   padding: 3rem;
   width: 100%;
-  max-width: 92rem;
+  /* --- FIX 2: Reduced max-width for a more compact desktop view --- */
+  max-width: 80rem; 
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.05);
+  gap: 3rem;
+  box-shadow: 0 1.5rem 3rem rgba(115, 163, 166, 0.2);
 }
 
 .input-panel label {
   font-weight: 700;
   margin-bottom: 0.6rem;
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.4rem; /* Slightly larger for readability */
   color: var(--dark-grayish-cyan);
 }
 
@@ -70,7 +72,12 @@ body {
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem; /* Increased margin for better spacing */
+}
+
+/* Add focus state for inputs */
+.input-field:focus-within {
+  outline: 2px solid var(--strong-cyan);
 }
 
 .input-field img {
@@ -82,7 +89,7 @@ body {
   border: none;
   background: none;
   width: 100%;
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--very-dark-cyan);
   text-align: right;
   font-weight: 700;
@@ -92,9 +99,10 @@ body {
 
 .btn-panel {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* --- FIX 4: Changed to 2 columns for mobile-first design --- */
+  grid-template-columns: repeat(2, 1fr); 
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem; /* Increased margin */
 }
 
 .percentage-btn {
@@ -120,13 +128,18 @@ body {
   font-weight: 700;
   padding: 1rem;
   width: 100%;
-  text-align: right;
-  border: none;
+  text-align: center; /* Centered text looks better */
+  border: 2px solid transparent; /* Prepare for focus state */
   border-radius: var(--radius);
   background-color: var(--very-light-grayish-cyan);
   color: var(--very-dark-cyan);
   font-family: inherit;
   outline: none;
+  transition: var(--transition);
+}
+
+.custom-tip:focus {
+  border-color: var(--strong-cyan);
 }
 
 .calculation-result {
@@ -136,8 +149,8 @@ body {
   padding: 4rem 3rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
   justify-content: space-between;
+  gap: 3rem;
 }
 
 .result {
@@ -156,7 +169,7 @@ body {
 }
 
 .amount {
-  font-size: 3.2rem;
+  font-size: clamp(3.2rem, 5vw, 4rem); /* Responsive font size */
   font-weight: 700;
   color: var(--strong-cyan);
 }
@@ -172,35 +185,38 @@ body {
   font-weight: 700;
   cursor: pointer;
   transition: var(--transition);
+  margin-top: auto; /* Push reset button to the bottom */
 }
 
 .reset-btn:hover {
-  background-color: hsl(172, 67%, 55%);
+  background-color: hsl(185, 41%, 84%);
 }
 
 .reset-btn:disabled {
-  background-color: var(--strong-cyan);
-  opacity: 0.3;
+  background-color: hsl(183, 79%, 24%); /* Darker disabled state */
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
+/* --- Media Query for Desktop Layout --- */
 @media (min-width: 768px) {
   .container {
     flex-direction: row;
-    justify-content: space-between;
     gap: 4rem;
   }
 
+  /* --- FIX 3: Changed flex properties to create a non-50/50 split --- */
   .input-panel {
-    flex: 1;
-    padding-right: 2rem;
+    flex-basis: 55%; /* Give the input panel a base width */
   }
 
   .calculation-result {
-    flex: 1;
-    height: 100%;
-    justify-content: space-between;
+    flex-basis: 45%; /* Give the result panel a base width */
+  }
+
+  /* --- FIX 4: Override grid to 3 columns for desktop --- */
+  .btn-panel {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
 
