@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frontend Mentor | Tip Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <h1 class="heading">SPLI<br>TTER</h1>
+
+  <main class="container">
+    <div class="input-panel">
+      <label for="bill">Bill</label>
+      <div class="input-field">
+        <img src="./images/icon-dollar.svg" alt="dollar icon" />
+        <input type="number" id="bill" placeholder="0" />
+      </div>
+
+      <label>Select Tip %</label>
+      <div class="btn-panel">
+        <button class="percentage-btn">5%</button>
+        <button class="percentage-btn">10%</button>
+        <button class="percentage-btn active">15%</button>
+        <button class="percentage-btn">25%</button>
+        <button class="percentage-btn">50%</button>
+        <input type="number" class="custom-tip" placeholder="Custom" />
+      </div>
+
+      <label for="people">Number of People</label>
+      <div class="input-field">
+        <img src="./images/icon-person.svg" alt="person icon" />
+        <input type="number" id="people" placeholder="0" />
+      </div>
+    </div>
+
+    <div class="calculation-result">
+      <div class="result">
+        <div class="label">
+          <h2>Tip Amount</h2>
+          <p>/ person</p>
+        </div>
+        <div class="amount" id="tipAmount">$4.27</div>
+      </div>
+
+      <div class="result">
+        <div class="label">
+          <h2>Total</h2>
+          <p>/ person</p>
+        </div>
+        <div class="amount" id="totalAmount">$32.79</div>
+      </div>
+
+      <button class="reset-btn">RESET</button>
+    </div>
+  </main>
+</body>
+</html>

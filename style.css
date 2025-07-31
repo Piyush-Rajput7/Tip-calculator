@@ -1,0 +1,173 @@
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--light-grayish-cyan);
+  color: var(--very-dark-cyan);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.heading {
+  letter-spacing: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--very-dark-cyan);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container {
+  background-color: var(--white);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.input-panel label {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input-field {
+  position: relative;
+  background-color: var(--very-light-grayish-cyan);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.input-field img {
+  width: 12px;
+  margin-right: 0.5rem;
+}
+
+.input-field input {
+  border: none;
+  background: none;
+  width: 100%;
+  font-size: 1.25rem;
+  color: var(--very-dark-cyan);
+  text-align: right;
+  font-weight: 700;
+  font-family: inherit;
+  outline: none;
+}
+
+.btn-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.percentage-btn {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.percentage-btn:hover,
+.percentage-btn.active {
+  background-color: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.custom-tip {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.5rem;
+  width: 100%;
+  text-align: right;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--very-light-grayish-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.calculation-result {
+  background-color: var(--very-dark-cyan);
+  color: var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label h2 {
+  font-size: 1rem;
+}
+
+.label p {
+  font-size: 0.75rem;
+  color: var(--grayish-cyan);
+}
+
+.amount {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--strong-cyan);
+}
+
+.reset-btn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--strong-cyan);
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--very-dark-cyan);
+  font-size: 1.25rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  background-color: hsl(172, 67%, 55%);
+}
+
+
+
+
